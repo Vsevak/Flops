@@ -19,6 +19,8 @@
 #include "arch/arch_2011_SandyBridge.h"
 #elif ArchCore2
 #include "arch/arch_2006_Core2.h"
+#elif Aarch64
+#include "arch/arch_Aarch64.h"
 #endif
 
 using namespace Flops;

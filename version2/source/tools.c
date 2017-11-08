@@ -1,13 +1,13 @@
 /* tools.c
- * 
+ *
  * Author           : Alexander J. Yee
  * Date Created     : 10/21/2011
- * Last Modified    : 01/25/2012
- * 
- * 
- * 
+ * Last Modified    : 08/11/2012
+ *
+ *
+ *
  * And of course... The typical copyright stuff...
- * 
+ *
  *      Redistribution of this program in both source or binary, regardless of
  *  form, with or without modification is permitted as long as the following
  *  conditions are met:
@@ -18,7 +18,7 @@
  *              binary.
  *          3.  The following disclaimer is maintained either inline in the
  *              source or distributed with the binary.
- * 
+ *
  *  Disclaimer:
  *  This software is provided "as is", without any guarantee made to its
  *  suitability or fitness for any particular use. It may contain bugs so use
@@ -42,12 +42,14 @@ uint64 rdtsc(){
     return __rdtsc();
 }
 #else
+#ifndef Aarch64
 #include <sys/time.h>
 uint64 rdtsc(){
     unsigned int lo, hi;
     __asm__ __volatile__ ("rdtsc" : "=a" (lo), "=d" (hi));
     return ((uint64)hi << 32) | lo;
 }
+#endif
 #endif
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////

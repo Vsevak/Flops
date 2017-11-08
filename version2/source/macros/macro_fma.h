@@ -1,9 +1,9 @@
 /* macro_fma.h
- * 
+ *
  * Author           : Alexander J. Yee
  * Date Created     : 07/10/2014
  * Last Modified    : 07/10/2014
- * 
+ *
  */
 
 #ifndef _flops_macro_fma_H
@@ -41,6 +41,36 @@
     r9 = vnma(mul0, mul1, r9);    \
     rA = vnma(mul0, mul1, rA);    \
     rB = vnma(mul0, mul1, rB);    \
+}
+#define flops_fma_arm_linear_chains12_ops24(    \
+    vpma, vnma,  \
+    add0, mul0, mul1,  \
+    r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, rA, rB \
+){  \
+    r0 = vpma(r0, mul0, add0);    \
+    r1 = vpma(r1, mul0, add0);    \
+    r2 = vpma(r2, mul0, add0);    \
+    r3 = vpma(r3, mul0, add0);    \
+    r4 = vpma(r4, mul0, add0);    \
+    r5 = vpma(r5, mul0, add0);    \
+    r6 = vpma(r6, mul0, add0);    \
+    r7 = vpma(r7, mul0, add0);    \
+    r8 = vpma(r8, mul0, add0);    \
+    r9 = vpma(r9, mul0, add0);    \
+    rA = vpma(rA, mul0, add0);    \
+    rB = vpma(rB, mul0, add0);    \
+    r0 = vnma(r0, mul1, add0);    \
+    r1 = vnma(r1, mul1, add0);    \
+    r2 = vnma(r2, mul1, add0);    \
+    r3 = vnma(r3, mul1, add0);    \
+    r4 = vnma(r4, mul1, add0);    \
+    r5 = vnma(r5, mul1, add0);    \
+    r6 = vnma(r6, mul1, add0);    \
+    r7 = vnma(r7, mul1, add0);    \
+    r8 = vnma(r8, mul1, add0);    \
+    r9 = vnma(r9, mul1, add0);    \
+    rA = vnma(rA, mul1, add0);    \
+    rB = vnma(rB, mul1, add0);    \
 }
 #define flops_fma_horner_chains12_ops24(    \
     vpma, vnma,  \
