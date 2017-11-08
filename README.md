@@ -1,3 +1,6 @@
+This project is an adaptation of Mystical/Flops code for ARMv8 processors. The modifications are done on `version 2` and can be compiled by gcc-5 aarch64 cross-compiler. To compile the code in native mode on any ARMv8 computer one should modify Makefile. The information about the original project is below:
+
+
 Flops
 =====
 
@@ -48,6 +51,9 @@ Here is a list of recommended binaries for each processor line.
 
  - `2017-SkylakePurley` (AVX512-F and AVX512-VL)
     - Intel Skylake Purley (2017)
+
+ - `Aarch64` (ASIMD, FMA)
+    - ARM Cortex-A
 
 x64 is strongly recommended, but not required. The benchmark is optimized for 16 SIMD registers and may not compile well on x86.
 
